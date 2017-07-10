@@ -4,7 +4,7 @@ class User < ApplicationRecord
   validates :height, presence: true, format: { with: VALIDATES_REGEX }
   validates :weight, presence: true, format: { with: VALIDATES_REGEX }
   validates :sex, presence: true
-  validates :activitylevel, presence: true, format: { with: VALIDATES_REGEX }
   validates :researchmodel, presence: true
   validates :bodyfat, presence: true, format: { with: VALIDATES_REGEX }
+  validates :pundstolose, presence: true
 end

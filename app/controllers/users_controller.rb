@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:age,:height,:weight,:sex,:activitylevel,
-                                  :researchmodel,:bodyfat)
+    params.require(:user).permit(:age,:height,:weight,:sex,
+                                  :researchmodel,:bodyfat, :activitylevel, :pundstolose)
   end
 end
