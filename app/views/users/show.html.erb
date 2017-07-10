@@ -1,13 +1,28 @@
-<p>Age:<%= @user.age.to_i%></p><br>
+<p>Age: <%= @user.age.to_i%></p><br>
 <br>
-<p>Weight:<%= @user.weight%></p><br>
+<p>Weight: <%= @user.weight%></p><br>
+<% weight_in_kg = @user.weight.to_i * 0.45359237 %>
 <br>
-<p>Height:<%= @user.height%></p><br>
+<p>Height: <%= @user.height%></p><br>
+<% weight_in_in = @user.height.to_i * 0.39 %>
 <br>
-<p>Sex:<%= @user.sex%></p><br>
+<p>Sex: <%= @user.sex%></p><br>
 <br>
-<p>Activity Level:<%= @user.activitylevel%></p><br>
+<p>Activity Level: <%= @user.activitylevel%></p><br>
 <br>
-<p>Research Model:<%= @user.researchmodel%></p><br>
+<p>Research Model: <%= @user.researchmodel%></p><br>
 <br>
-<p>Body Fat:<%= @user.bodyfat%></p><br>
+<p>Body Fat: <%= @user.bodyfat%></p><br>
+<br>
+<br>
+<% firstBMI = (@user.weight.to_i * 0.45)%>
+<% secondBMI = (weight_in_in * 0.025) ** 2%>
+<p>BMI: <%= (firstBMI / secondBMI).round(2) %></p>
+<br>
+<p>BMR:
+  <% if @user.sex == "M" %>
+    <%= (66.47 + (13.7 * weight_in_kg) + (5 * @user.height.to_i) - (6.8 * @user.age.to_i)).to_i %>
+  <% else %>
+    <%= (655.1 + (9.6 * weight_in_kg) + (1.8 * @user.height.to_i) - (4.7 * @user.age.to_i)).to_i %>
+  <% end %>
+</p>
