@@ -1,24 +1,7 @@
-# README
+** Calorie Calculator
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Welcome to my calorie calculator. This Ruby on Rails application was built with Bootstrap for styling.
+Key points of this application:
+* Uses the Mifflin-St Jeor research model for calculating your BMR
+* Gives you a daily calorie intake based on your activity level and your goals (based on how many calories you wish to lose per month)
+* Also tells you your daily TDEE (Total Daily Energy Expenditure)
