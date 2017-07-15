@@ -194,4 +194,20 @@ input {
   margin-left: 0;
 }
 
-/* Modals */
+.bigJumbo {
+  width: 50%;
+  text-align: center;
+  background-color: #D3D3D3;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.customJumbo {
+  width: auto;
+  background-color: $gray-darker;
+  color: #fff;
+  border-radius: 10px;
+}

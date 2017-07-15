@@ -1,57 +1,58 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        Age: <%= @user.age %><br>
-        <br>
-        <p>Weight: <%= @user.weight%></p><br>
-        <% weight_in_kg = @user.weight.to_i * 0.45359237 %>
-        <br>
-        <p>Height: <%= @user.height%></p><br>
-        <% weight_in_in = @user.height.to_i * 0.39 %>
-        <br>
-        <p>Sex: <%= @user.sex%></p><br>
-        <br>
-        <p>Activity Level: <%= @user.activitylevel%></p><br>
-        <br>
-        <p>Body Fat: <%= @user.bodyfat%></p><br>
-        <br>
-        <p>Pounds to lose per month: <%= @user.pundstolose%></p><br>
-        <br>
-        <p> ------------------------------------------------</p>
+<br>
+<div class= "containter text-center">
+  <div class="col-lg-8 col-lg-offset-4">
+    <div class="bigJumbo">
+      Age: <%= @user.age %><br>
+      <br>
+      Weight: <%= @user.weight%><br>
+      <% weight_in_kg = @user.weight.to_i * 0.45359237 %>
+      <br>
+      Height: <%= @user.height%><br>
+      <% weight_in_in = @user.height.to_i * 0.39 %>
+      <br>
+      Sex: <%= @user.sex%>=<br>
+      <br>
+      Activity Level: <%= @user.activitylevel%><br>
+      <br>
+      Body Fat: <%= @user.bodyfat%><br>
+      <br>
+      Pounds to lose per month: <%= @user.pundstolose%><br>
+      <br>
+      <div class="customJumbo">
         <br>
         <% firstBMI = (@user.weight.to_i * 0.45)%>
         <% secondBMI = (weight_in_in * 0.025) ** 2%>
-        <p>BMI: <%= (firstBMI / secondBMI).round(2) %></p>
+        BMI: <%= (firstBMI / secondBMI).round(2) %>
         <br>
-        <p>BMR:
-          <% if @user.sex == "M" %>
+        BMR:
+          <% if @user.sex[0] == "M" %>
             <%= bmr = ((9.99 * weight_in_kg) + (6.25 * @user.height.to_i) - (4.92 * @user.age.to_i) + 5).to_i %>
           <% else %>
             <%= bmr = ((9.99 * weight_in_kg) + (6.25 * @user.height.to_i) - (4.92 * @user.age.to_i) - 161).to_i %>
           <% end %>
-        </p>
         <br>
-        <% if @user.activitylevel == '1' %>
+        <% if @user.activitylevel[0] == '1' %>
           <% maintenancefactor = bmr * 1.2 %>
-        <% elsif @user.activitylevel == '2' %>
+        <% elsif @user.activitylevel[0] == '2' %>
           <% maintenancefactor = bmr * 1.375 %>
-        <% elsif @user.activitylevel == '3' %>
+        <% elsif @user.activitylevel[0] == '3' %>
           <% maintenancefactor = bmr * 1.55 %>
-        <% elsif @user.activitylevel == '4' %>
+        <% elsif @user.activitylevel[0] == '4' %>
           <% maintenancefactor = bmr * 1.725 %>
-        <% elsif @user.activitylevel == '5' %>
+        <% elsif @user.activitylevel[0] == '5' %>
           <% maintenancefactor = bmr * 1.9 %>
         <% end %>
 
-        <p>TDEE: <%= tdee = maintenancefactor.to_i %></p>
-
+        TDEE: <%= tdee = maintenancefactor.to_i %>
+        <br>
         <% one_pound = 3500 %>
         <% subtractcals = ((@user.pundstolose.to_i * one_pound) / 30) %>
-        <p>Based on your Acitvity Level and your monthly goal and your pounds to lose per month, this is how many calories your need to eat a day:
-          <%= (tdee - subtractcals).to_i %>
-        </p>
-      </h1>
-    </section>
-  </aside>
+        <h4>
+          Based on your Acitvity Level and your monthly goal and you should eat
+          <%= (tdee - subtractcals).to_i %> calories a day.
+        </h4>
+        <br>
+      </div>
+    </div>
+  </div>
 </div>
