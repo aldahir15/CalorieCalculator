@@ -1,4 +1,4 @@
-** Calorie Calculator
+# Calorie Calculator
 
 Welcome to my calorie calculator. This Ruby on Rails application was built with Bootstrap for styling.
 Key points of this application:
